@@ -15,7 +15,39 @@
     </style>
 </head>
 
-<body>
+<body class="bg-base-100 max-h-[150px] lg:max-h-[300px] overflow-auto font-inter">
+
+    <!-- Navbar -->
+    <div
+        class="w-full bg-white p-4 rounded-lg mb-4 flex flex-col md:flex-row md:justify-between md:items-center items-center text-center">
+        <!-- Left Section -->
+        <div class="flex items-center mb-4 md:mb-0">
+            <img src="./assets/logo.png" alt="Logo" class="w-14 h-14 mr-2">
+            <span class="text-xl font-bold text-green-700">Emergency Service</span>
+        </div>
+
+        <!-- Right Section -->
+        <div class="flex gap-4">
+            <!-- Heart -->
+            <div class="flex items-center bg-gray-100 p-2 rounded-full">
+                <span id="heartCount" class="text-black font-semibold mr-2">0</span>
+                <i class="fa-solid fa-heart text-red-600"></i>
+            </div>
+
+            <!-- Coin -->
+            <div class="flex items-center bg-gray-100 p-2 rounded-full">
+                <span id="coinCount" class="text-black font-semibold mr-2">100</span>
+                <img src="./assets/coin.png" alt="coin" class="w-5">
+            </div>
+
+            <!-- Copy -->
+            <div class="flex items-center bg-green-600 p-2 rounded-full">
+                <span id="copyCount" class="text-white font-semibold mr-2">0</span>
+                <span class="text-white font-semibold">Copy</span>
+            </div>
+        </div>
+    </div>
+
 
 </body>
 
