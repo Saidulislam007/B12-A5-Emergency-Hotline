@@ -3,7 +3,6 @@ let heartCount = 0;
 let coinCount = 100;
 let copyCount = 0;
 
-// DOM Element References: Get references to the HTML elements where we'll display data.
 
 const heartDisplay = document.getElementById("heartCount");
 const coinDisplay = document.getElementById("coinCount");
@@ -11,12 +10,10 @@ const copyDisplay = document.getElementById("copyCount");
 const historyList = document.getElementById("historyList");
 const clearButton = document.querySelector(".clear-history");
 
-// Interactive Element References: Get references to all the buttons that a user can click.
 const heartButtons = document.querySelectorAll(".heart-btn");
 const copyButtons = document.querySelectorAll(".copy-btn");
 const callButtons = document.querySelectorAll(".call-btn");
 
-// Call Button Logic: Handles the call functionality, including coin deduction and adding to history.
 callButtons.forEach((button) => {
     button.addEventListener("click", function () {
         const card = button.parentElement.parentElement;
@@ -28,11 +25,9 @@ callButtons.forEach((button) => {
             return;
         }
 
-        // Deduct coins and update display
         coinCount -= 20;
         coinDisplay.textContent = coinCount;
 
-        // **fr call alert **
         alert(`Calling ${name}... 📞\n20 coins deducted. Remaining coins: ${coinCount}`);
 
         const time = new Date().toLocaleTimeString("en-US", {
@@ -75,7 +70,6 @@ callButtons.forEach((button) => {
 });
 
 
-// Heart Button Logic: Increments the heart count and updates the display when a heart button is clicked.
 heartButtons.forEach((button) => {
     button.addEventListener("click", function () {
         heartCount++;
@@ -84,7 +78,6 @@ heartButtons.forEach((button) => {
 });
 
 
-// Copy Button Logic: Copies a number to the clipboard, displays an alert, and updates the copy count.
 copyButtons.forEach((button) => {
     button.addEventListener("click", function () {
 
@@ -95,14 +88,12 @@ copyButtons.forEach((button) => {
         navigator.clipboard.writeText(number);
         alert("Copied: " + number);
 
-        // Update the copy count and its display.
         copyCount++;
         copyDisplay.textContent = copyCount;
     });
 });
 
 
-// Call Button Logic: Handles the call functionality, including coin deduction and adding to history.
 callButtons.forEach((button) => {
     button.addEventListener("click", function () {
 
@@ -150,7 +141,6 @@ callButtons.forEach((button) => {
         numberPara.classList.add("text-gray-500", "text-sm");
         numberPara.innerText = number;
 
-        // Assemble the text content for the history item.
         textContainer.appendChild(nameHeading);
         textContainer.appendChild(numberPara);
 
@@ -158,17 +148,14 @@ callButtons.forEach((button) => {
         timeSpan.classList.add("text-gray-400", "text-xs");
         timeSpan.innerText = time;
 
-        // Append all the created elements to the history item.
         historyItem.appendChild(textContainer);
         historyItem.appendChild(timeSpan);
 
-        // Add the new history item to the top of the history list.
         historyList.appendChild(historyItem);
     });
 });
 
 
-// Clear History Logic: Clears the entire history list by setting its inner HTML to an empty string.
 clearButton.addEventListener("click", function () {
     historyList.innerHTML = "";
 });
